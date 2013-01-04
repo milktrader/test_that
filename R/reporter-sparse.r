@@ -74,12 +74,9 @@ SparseReporter <- setRefClass("SparseReporter", contains = "Reporter",
         header <- str_c(label, ". ", type, ": ", tests, " ")
         linewidth <- ifelse(nchar(header) > getOption("width"),0,getOption("width") - nchar(header))
 
-        message <- sapply(failures, "[[", "message")
-
         cat("\n\n")
         cat(str_c(
-          colourise(header, "red"),  "\n", 
-          collapse = "\n"))      
+          colourise(header, "red"), "\n" ))      
       }
     }
   )
